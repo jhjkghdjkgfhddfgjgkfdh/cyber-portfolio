@@ -1,8 +1,21 @@
-\## Short Summary
+# Phishing Pond — Writeup
+**Room:** Phishing Pond (TryHackMe)  
+**Author:** Idan
 
-Completed the Phishing Pond room on TryHackMe. The goal was to learn phishing techniques and analyze fake pages/emails.
+## Short Summary
+Completed the Phishing Pond room on TryHackMe. The goal was to learn phishing techniques and practice analyzing malicious pages and emails in a safe environment. I used Burp Suite to intercept and inspect HTTP requests and responses, examined relevant headers and links, and successfully modified a request parameter to observe a change in the server response. This confirmed the ability to analyze phishing flows and manipulate requests for testing and learning purposes.
 
-Used Burp Suite to intercept and inspect HTTP requests, examined headers and links, and successfully demonstrated changing parameters to observe server response.
+## What I did (Steps)
+- Started by reading the room objectives and mapping tasks (identify suspicious URL, inspect request/response).
+- Intercepted traffic with **Burp Suite** (Proxy → Intercept), captured the target request and forwarded it to **Repeater**.
+- Inspected request/response headers and body to locate the parameter to test.
+- Modified the parameter in Repeater and replayed the request — observed a different server response that demonstrated the vulnerable/interesting behavior.
+- Optionally checked page headers with `curl -I <url>` and performed basic DNS lookup with `nslookup <domain>`.
 
-Learned common phishing indicators and how to analyze requests safely in a controlled environment.
+## Tools
+- Burp Suite (Community) — intercept & repeater  
+- Browser DevTools — network inspection  
+- curl, nslookup — quick header/DNS checks
 
+## Outcome & Conclusion
+Successfully demonstrated an ability to analyze a phishing scenario: intercept HTTP traffic, inspect/mutate requests, and verify server behavior. Recommended next steps: practice identifying SPF/DKIM/DMARC issues and recreate the scenario in a local sandbox (MailHog/smtp4dev) for safer testing.
