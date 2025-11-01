@@ -1,7 +1,7 @@
 # Phishing Pond — Writeup
 **Room:** Phishing Pond (TryHackMe)  
 **Author:** Idan  
-**Level:** Easy
+**Level:** Beginner
 
 ## Short Summary
 Completed the Phishing Pond room on TryHackMe (Easy level). The goal was to learn basic phishing techniques and how to inspect suspicious pages in a safe environment. I used simple tools to look at requests and headers, and I changed a request parameter to see a different response from the server.
